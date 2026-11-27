@@ -105,7 +105,7 @@ ban(b){const u=U(b.id);if(u.role=='admin')return;u.banned=!u.banned;save();rende
 srules(){D.rules.ar=V('ra');D.rules.en=V('re');save();toast(T('تم الحفظ','Saved'))},scfg(){D.cfg.ar=V('na')||D.cfg.ar;D.cfg.en=V('ne')||D.cfg.en;save();render()},
 logo(b,e){readImg(e.target.files[0],200,d=>{D.cfg.logo=d;save();render()})},bg(b,e){readImg(e.target.files[0],1100,d=>{D.cfg.bg=d;save();render();toast(T('تم تغيير الخلفية','Background updated'))})},
 dels(b){D.services=D.services.filter(s=>s.k!=b.id);save();render()},adds(){const a=V('sa'),e=V('se');if(!a||!e)return;D.services.push({k:'s'+Date.now(),ar:a,en:e,i:V('si')||'🛠️'});save();render()}};
-const FB={apiKey:"AIzaSyB9WTUf2dt-1RNjVaVi1FRyuwAZW632opw",authDomain:"yadan.firebaseapp.com",projectId:"yadan",storageBucket:"yadan.firebasestorage.app",messagingSenderId:"598116901148",appId:"1:598116901148:web:348cdbef5b60e6f9069ad9"};
+const FB={apiKey:"AIzaSyB9WTUf2dt-1RNjVaVi1FRyuwAZW632opw",authDomain:"yadanly.firebaseapp.com",projectId:"yadanly",storageBucket:"yadanly.firebasestorage.app",messagingSenderId:"598116901148",appId:"1:598116901148:web:348cdbef5b60e6f9069ad9"};
 const app=initializeApp(FB),fa=getAuth(app),db=initializeFirestore(app,{experimentalForceLongPolling:true}),DEF=seed().services;
 const dbg={};let ERR='',heal=0,PRIV={},unsubs=[],stf=[],seen=0,lastRole='',DBsvc=false;
 const rr=()=>{clearTimeout(rr.t);rr.t=setTimeout(()=>{const a=document.activeElement;if((a&&/INPUT|TEXTAREA/.test(a.tagName)&&!a.closest('dialog'))||document.querySelector('dialog[open]'))return rr();render()},250)};
